@@ -1,0 +1,49 @@
+@layout('layouts.main')
+
+@section('title')
+  DoubleUp - Register
+@endsection
+
+@section('content')
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 col-lg-2 col-sm-0">
+
+        </div>
+        <div class="col-md-8 col-lg-8 col-sm-12">
+            <form action={{ route('UserController.create') }} method="POST">
+                @if(flashMessage('loginError'))
+                  <span> {{flashMessage('loginError')}}</span>
+                @endif
+                {{ csrfField() }}
+             <label>
+    <p class="label-txt">Username:</p>
+             <input type="text" name="username" value="{{ old('username','') }}" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+    @if(hasErrorFor('username'))
+                  <span> {{getErrorFor('username')}}</span>
+    @endif
+  </label>
+  <label>
+    <p class="label-txt">Password: </p>
+  <input type="text" name="password" value=" {{ old('password','') }}" class="input">
+    <div class="line-box">
+      <div class="line"></div>
+    </div>
+    @if(hasErrorFor('password'))
+                  <span> {{getErrorFor('password')}}</span>
+    @endif
+  </label>
+  <button type="submit">submit</button>
+</form>
+        </div>
+        <div class="col-md-1 col-lg-2 col-sm-0">
+
+        </div>
+    </div>
+</div>
+  
+@endsection

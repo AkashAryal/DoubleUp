@@ -16,4 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('game')
+Route.on('/test').render('test')
+Route.on('/register').render('register')
+//Route.post('/register', 'UserController.create').validator('CreateUser')

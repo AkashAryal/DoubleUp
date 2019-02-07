@@ -174,7 +174,7 @@ eval("\n\ntry {\n  window.Popper = __webpack_require__(/*! popper.js */ \"./node
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n$(document).ready(function () {\n  $(\"#btnSubmit\").click(function () {\n    alert(\"button my dude\");\n  });\n  console.log(\"hello\");\n});\n\nwindow.removeHoverContainers = function () {};\n\n//# sourceURL=webpack:///./resources/assets/scripts/custom.js?");
+eval("\n\n$(document).ready(function () {\n  $(\"#btnSubmit\").click(function () {\n    alert(\"button my dude\");\n  });\n  console.log(\"hello\");\n  $('.input').focus(function () {\n    $(this).parent().find(\".label-txt\").addClass('label-active');\n  });\n  $(\".input\").focusout(function () {\n    if ($(this).val() == '') {\n      $(this).parent().find(\".label-txt\").removeClass('label-active');\n    }\n\n    ;\n  });\n});\n\nwindow.removeHoverContainers = function () {};\n\n//# sourceURL=webpack:///./resources/assets/scripts/custom.js?");
 
 /***/ }),
 

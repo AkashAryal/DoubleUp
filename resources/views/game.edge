@@ -1,0 +1,30 @@
+@layout('layouts.main')
+
+@section('css')
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+@endsection
+
+@section('title')
+  Double Up! - Login
+@endsection
+
+@section('content')
+
+      <div class="mx-auto">
+      <canvas id="ctx" width="500" height="500" class="mt-4" style="background-color: #baf4fd; opacity:.5;border:1px solid #000000;"></canvas>
+      </div>
+      <script>
+        var ctx = document.getElementById("ctx").getContext("2d");
+    ctx.font = '30px Arial';
+
+    var socket = io();
+
+    socket.on('test',()=>{
+      console.log("event binder worked");
+      
+    })
+      </script>
+  
+@endsection
+

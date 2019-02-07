@@ -18,6 +18,23 @@ function sassRules () {
   ]
 }
 
+function imgRules(){
+  return [
+    {
+      test: /\.(gif|png|jpe?g|svg)$/i,
+      use: [
+        'file-loader',
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            bypassOnDebug: true, // webpack@1.x
+            disable: true, // webpack@2.x and newer
+          },
+        },
+      ],
+    }
+  ]
+}
 function scriptRules () {
   return [
     {
@@ -38,7 +55,7 @@ module.exports = {
     filename: 'app.js'
   },
   module: {
-    rules: sassRules().concat(scriptRules())
+    rules: sassRules().concat(scriptRules()).concat(imgRules())
   },
   plugins: [
     new MiniCssExtractPlugin({
