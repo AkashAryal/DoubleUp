@@ -27,6 +27,11 @@
     ctx.font = '30px Arial';
 
     var socket = io();
+
+    socket.on('test',()=>{
+      console.log("event binder worked");
+      
+    })
       </script>
     </div>
   </section>
