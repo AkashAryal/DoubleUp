@@ -1,9 +1,9 @@
 'use strict'
 
-class CreateUser {
+class LoginUser {
   get rules() {
     return {
-      "username": "min:6|required|unique:users",
+      "username": "min:6|required",
       "password": "required|min:6"
     }
   }
@@ -11,8 +11,7 @@ class CreateUser {
   get messages() {
     return {
       'min': "Gomen-nasai m(_　_)m, {{field}} needs to be at least 6 characters long",
-      'required': 'Woah now, {{field}} is required',
-      'unique': 'Wait a second, the {{field}} already exists'
+      'required': 'Woah now, {{field}} is required'
 
     }
   }
@@ -27,4 +26,4 @@ class CreateUser {
   }
 }
 
-module.exports = CreateUser
+module.exports = LoginUser

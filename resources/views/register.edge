@@ -12,9 +12,9 @@
 
         </div>
         <div class="col-md-8 col-lg-8 col-sm-12">
-            <form action={{ route('UserController.create') }} method="POST">
+            <form action={{ route('/register') }} method="POST">
                 @if(flashMessage('loginError'))
-                  <span> {{flashMessage('loginError')}}</span>
+                  <span style="color:red"> {{flashMessage('loginError')}}</span>
                 @endif
                 {{ csrfField() }}
              <label>
@@ -24,20 +24,20 @@
       <div class="line"></div>
     </div>
     @if(hasErrorFor('username'))
-                  <span> {{getErrorFor('username')}}</span>
+                  <span style="color:red"> {{getErrorFor('username')}}</span>
     @endif
   </label>
   <label>
     <p class="label-txt">Password: </p>
-  <input type="text" name="password" value=" {{ old('password','') }}" class="input">
+  <input type="password" name="password"  class="input">
     <div class="line-box">
       <div class="line"></div>
     </div>
     @if(hasErrorFor('password'))
-                  <span> {{getErrorFor('password')}}</span>
+                  <span style="color:red"> {{getErrorFor('password')}}</span>
     @endif
   </label>
-  <button type="submit">submit</button>
+  <button type="submit">Register</button>
 </form>
         </div>
         <div class="col-md-1 col-lg-2 col-sm-0">
